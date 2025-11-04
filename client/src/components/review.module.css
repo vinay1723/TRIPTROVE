@@ -1,0 +1,27 @@
+.reviews {
+  /* position: absolute; */
+  left: 50px;
+  top: 50px;
+  width: 434px;
+  height: 15rem;
+  background-color: aqua;
+  padding: 20px;
+  border-radius: 4px;
+  font-style: normal;
+  font-size: 18px;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+/* .reviews img {
+  margin-right: 20px;
+  width: 65px;
+  height: 65px;
+  border-radius: 45px;
+} */
+
+.reviewp1 {
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 16px;
+}

@@ -1,0 +1,40 @@
+.color {
+  color: white;
+  width: 300px;
+  height: calc(100vh - 178px);
+  background-image: linear-gradient(
+      rgba(36, 42, 46, 0.1),
+      rgba(36, 42, 46, 0.4)
+    ),
+    url("public/img/neom-nMzbnMzMjYU-unsplash.jpg");
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  background-color: slateblue;
+  width: 508px;
+  height: 300px;
+  padding: 20px 30px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  height: h-svh;
+}
+
+.cta {
+  display: inline-block;
+  background-color: var(--color-brand--1);
+  color: var(--color-dark--1);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 5px;
+}

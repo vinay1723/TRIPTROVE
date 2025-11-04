@@ -1,0 +1,101 @@
+[
+  {
+    "_id": "5c88fa8cf4afda39709c2966",
+    "name": "The Sports Lover",
+    "duration": 14,
+    "price": 2997,
+    "startLocation": {
+      "coordinates": [-118.803461, 34.006072]
+    },
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 6
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c2955",
+    "name": "The Sea Explorer",
+    "duration": 7,
+    "price": 497,
+    "startLocation": {
+      "coordinates": [-80.185942, 25.774772]
+    },
+    "ratingsAverage": 5,
+    "ratingsQuantity": 9
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c295a",
+    "name": "The Snow Adventurer",
+    "duration": 4,
+    "price": 997,
+    "startLocation": {
+      "coordinates": [-106.822318, 39.190872]
+    },
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 13
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c296c",
+    "name": "The Wine Taster",
+    "duration": 5,
+    "price": 1997,
+    "startLocation": {
+      "coordinates": [-122.29286, 38.294065]
+    },
+    "ratingsAverage": 4.4,
+    "ratingsQuantity": 7
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c295d",
+    "name": "The City Wanderer",
+    "duration": 9,
+    "price": 1197,
+    "startLocation": {
+      "coordinates": [-73.985141, 40.75894]
+    },
+    "ratingsAverage": 4.6,
+    "ratingsQuantity": 5
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c2970",
+    "name": "The Star Gazer",
+    "duration": 9,
+    "price": 2997,
+    "startLocation": {
+      "coordinates": [-109.55099, 37.283469]
+    },
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 6
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c2974",
+    "name": "The Northern Lights",
+    "duration": 8,
+    "price": 1997,
+    "startLocation": {
+      "coordinates": [-114.406097, 62.439943]
+    },
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 7
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c2961",
+    "name": "The Park Camper",
+    "duration": 8,
+    "price": 1997,
+    "startLocation": {
+      "coordinates": [-115.172652, 36.110904]
+    },
+    "ratingsAverage": 4.6,
+    "ratingsQuantity": 5
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c2951",
+    "name": "The Forest Hiker",
+    "duration": 5,
+    "price": 397,
+    "startLocation": {
+      "coordinates": [-115.570154, 51.178456]
+    },
+    "ratingsAverage": 5,
+    "ratingsQuantity": 9
+  }
+]
