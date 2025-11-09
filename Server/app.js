@@ -77,10 +77,16 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  console.log("Cookies:", req.cookies);
+  console.log("Headers Cookie:", req.headers.cookie);
+  next();
+});
+
 app.use(cookieParser());
 app.use(express.json());
 
-app.options("*", cors()); // Preflight response for all routes
+// app.options("*", cors()); // Preflight response for all routes
 
 // app.use("/", (req, res, next) => {
 //   res.status(200).json({
