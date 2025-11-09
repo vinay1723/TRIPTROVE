@@ -96,9 +96,9 @@ function Signup() {
           </ul>
         </form>
       </div>
-      <div className="w-svw">
+      {/* <div className="w-svw">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }
