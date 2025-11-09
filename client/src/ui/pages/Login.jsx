@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../pages/Login.module.css";
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
 import { useState } from "react";
 import { login } from "../../../services/apitours";
 import { useDispatch } from "react-redux";

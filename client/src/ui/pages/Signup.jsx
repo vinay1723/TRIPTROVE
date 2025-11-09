@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 import { useState } from "react";
 import styles from "../pages/Login.module.css";
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
 import { signup } from "../../../services/apitours";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../assets/features/user/userSlice";
@@ -36,11 +36,11 @@ function Signup() {
   return (
     <div>
       <div
-        className={`${styles.color} bg-cover bg-center w-svw flex justify-center`}
+        className={`${styles.color} bg-cover bg-center w-svw flex justify-center bg-slate-100`}
       >
         <form
           onSubmit={handleUserdata}
-          className="mt-2 h-[618px] pl-12 pt-10 gap-4 flex flex-col  w-[578px] border-b-zinc-600 bg-white shadow-2xl rounded-2xl"
+          className="mt-2 h-[618px] pt-10 gap-4 flex flex-col  w-[478px] border-b-zinc-600 bg-white shadow-2xl rounded-2xl"
         >
           <h1 className="uppercase font-semibold upeercase  bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text text-3xl mb-5">
             sign into your account
@@ -53,7 +53,7 @@ function Signup() {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-[487px] h-[50px] px-4 py-2 focus:outline-none font-normal text-stone-700   bg-zinc-100 rounded-md"
+                className="w-[407px] h-[50px] py-2 focus:outline-none font-normal text-stone-700   bg-zinc-100 rounded-md"
               />
             </li>
             <li className="flex flex-col gap-2">
@@ -63,7 +63,7 @@ function Signup() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-[487px] h-[50px] px-4 py-2 focus:outline-none font-normal text-stone-700   bg-zinc-100 rounded-md"
+                className="w-[407px] h-[50px] py-2 focus:outline-none font-normal text-stone-700   bg-zinc-100 rounded-md"
               />
             </li>
             <li className="flex flex-col gap-2">
@@ -73,7 +73,7 @@ function Signup() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-[487px] h-[50px] px-4 py-2 focus:outline-none font-normal text-stone-700   bg-zinc-100  rounded-md"
+                className="w-[407px] h-[50px] py-2 focus:outline-none font-normal text-stone-700   bg-zinc-100  rounded-md"
               />
             </li>
             <li className="flex flex-col gap-2">
@@ -83,13 +83,13 @@ function Signup() {
                 id="confirmpassword"
                 value={PasswordConfirm}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-[487px] h-[50px] px-4 py-2 focus:outline-none font-normal text-stone-700   bg-zinc-100  rounded-md"
+                className="w-[407px] h-[50px] py-2 focus:outline-none font-normal text-stone-700   bg-zinc-100  rounded-md"
               />
             </li>
 
             <li>
               {" "}
-              <button className="hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-stone-100 px-5 py-2 rounded-full">
+              <button className="hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-stone-100 px-5 py-1 rounded-full">
                 {active === true ? "SIGNING IN" : "SIGN UP"}
               </button>
             </li>
