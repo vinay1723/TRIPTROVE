@@ -10,7 +10,7 @@ router.get(
   bookingController.getCheckoutSession
 );
 
-router.use(authController.protect);
+// router.use(authController.protect);
 
 router
   .route('/')
