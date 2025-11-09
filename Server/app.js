@@ -61,24 +61,24 @@ app.use(
         imgSrc: ["'self'", "data:", "blob:"],
         formAction: ["'self'"],
         connectSrc: [
-          "'self'",
-          "'unsafe-inline'",
-          "data:",
-          "blob:",
-          "https://*.stripe.com",
-          "https://*.mapbox.com",
-          "https://*.cloudflare.com/",
-          "https://bundle.js:*",
-          "ws://127.0.0.1:*/",
-        ],
+  "'self'",
+  "https://vinaytriptrove.netlify.app",  
+  "data:",
+  "blob:",
+  "https://*.stripe.com",
+  "https://*.mapbox.com",
+  "https://*.cloudflare.com",
+  "https://bundle.js:*",
+  "ws://127.0.0.1:*",
+],
         upgradeInsecureRequests: [],
       },
     },
   })
 );
 
-app.use(express.json());
 app.use(cookieParser());
+app.use(express.json());
 
 app.options("*", cors()); // Preflight response for all routes
 
