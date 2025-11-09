@@ -78,6 +78,7 @@ app.use(
 );
 
 app.use((req, res, next) => {
+  console.log("req:--",req);
   console.log("Cookies:", req.cookies);
   console.log("Headers Cookie:", req.headers.cookie);
   next();
