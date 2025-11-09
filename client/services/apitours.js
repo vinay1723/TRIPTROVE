@@ -5,6 +5,7 @@ export async function getAllTours() {
     const res = await axios({
       method: "GET",
       url: `https://triptrove-ergy.onrender.com/api/v1/tours/alltours`,
+      withCredentials: true,
     });
 
     return res.data.data.allDocs;
