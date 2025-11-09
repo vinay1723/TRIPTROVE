@@ -21,7 +21,7 @@ const cookieParser = require("cookie-parser");
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Update to match your React app's URL
+    origin: "https://triptrove-ergy.onrender.com", // Update to match your React app's URL
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow credentials (cookies, authorization headers)

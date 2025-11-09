@@ -7,7 +7,7 @@ export const bookTour = async (tourId, stripe) => {
     //1)Get checkout session from the end point of api
     const session = await axios({
       method: "GET",
-      url: `http://localhost:3000/api/v1/bookings/checkout-session/${tourId}`,
+      url: `https://triptrove-ergy.onrender.com/api/v1/bookings/checkout-session/${tourId}`,
       withCredentials: true,
     });
     console.log(session);
