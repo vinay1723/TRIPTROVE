@@ -30,8 +30,9 @@ function Tours() {
   // }, []);
   // const tours = useSelector(getTours);
 
+  // grid grid-cols-4 px-3 py-3 my-9
   return (
-    <div className="w-max grid grid-cols-4 px-3 py-3 my-9 h-auto">
+    <div className=" flex flex-wrap h-full justify-center w-full p-5">
       {tours.map((tour) => (
         <TourItem key={tour.id} singletour={tour} />
       ))}

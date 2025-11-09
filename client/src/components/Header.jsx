@@ -5,6 +5,7 @@ import { logout } from "../../services/apitours";
 import { setUser } from "../assets/features/user/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import "./header.css";
 function Header() {
   const user = useSelector(getUser);
   const photo = useSelector(getPhoto);
@@ -19,20 +20,20 @@ function Header() {
   }
 
   return (
-    <header className="flex justify-between bg-slate-200 px-3 py-6 w-full font-semibold font-sans text-xl items-center border-b text-stone-700">
+    <header className="flex justify-between bg-slate-200 px-3 py-6 w-full font-semibold font-sans md:text-sm lg:text-lg items-center border-b text-stone-700 navlinks">
       <div className=" ml-3 flex items-center gap-3  justify-center">
         <img src="./../../img/tours/icon.png" className="w-15 h-12" />
         <p>
-          <Link className="uppercase bg-gradient-to-r" to="/">
+          <Link className="bg-gradient-to-r" to="/">
             TripTrove
           </Link>
         </p>
-        <Link
+        {/* <Link
           className="uppercase bg-gradient-to-r  ml-8 focus:ring focus:ring-white"
           to="/recommend"
         >
           RECCOMENDED TOURS
-        </Link>
+        </Link> */}
       </div>
       <ul className="flex justify-between gap-12  mr-11 ">
         <li className="mt-2">
@@ -58,14 +59,14 @@ function Header() {
           {!user && (
             <div className="flex gap-3 justify-center">
               <Link
-                className="hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring hover:text-stone-100 focus:ring-yellow-300 focus:ring-offset-2 focus:text-stone-100 bg-orange-400 px-3 py-1 rounded-full text-stone-100 text-xl font-normal"
+                className="hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring hover:text-stone-100 focus:ring-yellow-300 focus:ring-offset-2 focus:text-stone-100 button px-3 py-1 rounded-full "
                 to="/login"
               >
                 LOGIN
               </Link>
 
               <Link
-                className="hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring hover:text-stone-100 focus:ring-yellow-300 focus:ring-offset-2 focus:text-stone-100 bg-orange-400 px-3 py-1 rounded-full text-stone-100 text-xl font-normal"
+                className="hover:bg-cyan-600 focus:bg-cyan-600 focus:outline-none focus:ring hover:text-stone-100 focus:ring-yellow-300 focus:ring-offset-2 focus:text-stone-100 button px-3 py-1 rounded-full "
                 to="/Signup"
               >
                 SIGNUP
@@ -75,7 +76,7 @@ function Header() {
           {user && (
             <div className="flex gap-7 justify-center">
               <Link
-                className="hover:bg-cyan-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 bg-orange-400 px-3 py-2 rounded-full text-stone-100 text-xl font-normal"
+                className="hover:bg-cyan-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 button"
                 onClick={handleLogout}
               >
                 LOGOUT
