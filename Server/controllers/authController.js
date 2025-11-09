@@ -92,7 +92,7 @@ exports.logout = (req, res) => {
 exports.protect = catchAsync(async (req, res, next) => {
   //1)  Getting token check of it's there
   let token;
-  console.log(res.cookies);
+  console.log(req.cookies);
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
