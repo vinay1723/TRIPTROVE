@@ -14,6 +14,7 @@ export async function getAllTours() {
   }
 }
 
+
 export async function signup(user) {
   try {
     const res = await axios({
