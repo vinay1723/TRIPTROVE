@@ -6,6 +6,7 @@ export async function getAllTours() {
       method: "GET",
       // url: `http://localhost:3000/api/v1/tours/alltours`,
       url: `https://triptrove-ergy.onrender.com/api/v1/tours/alltours`,
+      withCredentials: true,
     });
 
     return res.data.data.allDocs;
@@ -13,6 +14,7 @@ export async function getAllTours() {
     console.log(error);
   }
 }
+
 
 export async function signup(user) {
   try {

@@ -6,11 +6,10 @@ const router = express.Router();
 
 router.get(
   '/checkout-session/:tourId',
-  authController.protect,
   bookingController.getCheckoutSession
 );
 
-router.use(authController.protect);
+// router.use(authController.protect);
 
 router
   .route('/')

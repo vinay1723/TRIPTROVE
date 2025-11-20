@@ -64,14 +64,14 @@ app.use(
         formAction: ["'self'"],
         connectSrc: [
           "'self'",
-          "'unsafe-inline'",
+          "https://vinaytriptrove.netlify.app",
           "data:",
           "blob:",
           "https://*.stripe.com",
           "https://*.mapbox.com",
-          "https://*.cloudflare.com/",
+          "https://*.cloudflare.com",
           "https://bundle.js:*",
-          "ws://127.0.0.1:*/",
+          "ws://127.0.0.1:*",
         ],
         upgradeInsecureRequests: [],
       },
@@ -82,7 +82,17 @@ app.use(
 app.use(cookieParser());
 app.use(express.json());
 
-app.options("*", cors()); // Preflight response for all routes
+app.use((req, res, next) => {
+  console.log("req:--", req);
+  console.log("Cookies:", req.cookies);
+  console.log("Headers Cookie:", req.headers.cookie);
+  next();
+});
+
+app.use(cookieParser());
+app.use(express.json());
+
+// app.options("*", cors()); // Preflight response for all routes
 
 // app.use("/", (req, res, next) => {
 //   res.status(200).json({

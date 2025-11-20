@@ -86,6 +86,8 @@ exports.aliasTopTours = (req, res, next) => {
 //READING
 
 exports.allTours = async (req, res, next) => {
+  console.log("cookies at tours",req.cookies);
+  console.log("req",req);
   const allDocs = await Tour.find().populate("reviews");
   res.status(200).json({
     status: "success",
