@@ -13,7 +13,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   //2)create the checkout session
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    success_url: `http://localhost:5173/tour/${req.params.tourId}/user/${req.user.id}/price/${tour.price}`,
+    success_url: `https://vinaytriptrove.netlify.app/tour/${req.params.tourId}/user/${req.user.id}/price/${tour.price}`,
     cancel_url: `${req.protocol}://${req.get("host")}/tours/${tour.slug}`,
     customer_email: req.user.email,
     client_reference_id: req.params.tourId,
