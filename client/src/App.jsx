@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         errorElement: <Error />,
       },
       {
-        path: `/tour/:tourId/user/:userId/price/:price`,
+        path: `/tour/successfull`,
         element: <BookedTours />,
         // loader: BookedToursLoad,
         errorElement: <Error />,

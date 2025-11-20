@@ -51,9 +51,7 @@ exports.createBookingCheckout = async (req, res, next) => {
 
   await Booking.create({ tour, user, price });
 
-  res.redirect(
-    `https://vinaytriptrove.netlify.app/tour/${tour}/user/${user}/price/${price}`
-  );
+  res.redirect(`https://vinaytriptrove.netlify.app/tour/successfull`);
 };
 
 exports.allBookings = async (req, res, next) => {
