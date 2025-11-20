@@ -25,11 +25,13 @@ app.use(
     // Update to match your React app's URL
     // origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Allowed methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    // allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow credentials (cookies, authorization headers)
+    allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
+    exposedHeaders: ["Set-Cookie"],
   })
 );
-app.use(helmet.crossOriginEmbedderPolicy({ policy: "credentialless" }));
+// app.use(helmet.crossOriginEmbedderPolicy({ policy: "credentialless" }));
 app.use(
   helmet({
     contentSecurityPolicy: {
@@ -65,6 +67,7 @@ app.use(
         connectSrc: [
           "'self'",
           "https://vinaytriptrove.netlify.app",
+          "https://triptrove-ergy.onrender.com",
           "data:",
           "blob:",
           "https://*.stripe.com",
