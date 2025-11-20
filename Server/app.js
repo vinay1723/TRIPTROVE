@@ -84,7 +84,7 @@ app.use(express.json());
 
 app.use((req, res, next) => {
   console.log("req:--", req);
-  console.log("Cookies:", req.cookies);
+  console.log("Cookies:===jwt", req.cookies.jwt);
   console.log("Headers Cookie:", req.headers.cookie);
   next();
 });
