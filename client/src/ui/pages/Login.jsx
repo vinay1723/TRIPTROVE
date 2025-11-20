@@ -1,6 +1,6 @@
 // import { useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "../pages/Login.module.css";
+// import { Link } from "react-router-dom";
+// import styles from "../pages/Login.module.css";
 // import Footer from "../../components/Footer";
 import { useState } from "react";
 import { login } from "../../../services/apitours";
@@ -33,7 +33,7 @@ function Login() {
   return (
     <div>
       <div
-        className={`${styles.color} h-[633px]  flex  justify-center w-svw bg-cover bg-center`}
+        className={`h-[633px]  flex  justify-center w-svw bg-cover bg-center`}
       >
         <form
           onSubmit={handleUserdata}
@@ -76,9 +76,9 @@ function Login() {
               >
                 {status === "loading" ? "...LOGIN" : "LOGIN"}
               </button>
-              <Link className=" ml-60 text-blue-500 underline">
+              {/* <Link className=" ml-60 text-blue-500 underline">
                 forgot password?
-              </Link>
+              </Link> */}
             </li>
           </ul>
         </form>

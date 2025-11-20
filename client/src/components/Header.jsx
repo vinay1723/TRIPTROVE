@@ -9,7 +9,6 @@ import "./header.css";
 function Header() {
   const user = useSelector(getUser);
   const photo = useSelector(getPhoto);
-  console.log(photo);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   async function handleLogout() {

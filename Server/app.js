@@ -15,13 +15,15 @@ const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const hpp = require("hpp");
-const req = require("express/lib/request");
-const res = require("express/lib/response");
+// const req = require("express/lib/request");
+// const res = require("express/lib/response");
 const cookieParser = require("cookie-parser");
 
 app.use(
   cors({
-    origin: "https://vinaytriptrove.netlify.app", // Update to match your React app's URL
+    origin: "https://vinaytriptrove.netlify.app",
+    // Update to match your React app's URL
+    // origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow credentials (cookies, authorization headers)
@@ -77,8 +79,8 @@ app.use(
   })
 );
 
-app.use(express.json());
 app.use(cookieParser());
+app.use(express.json());
 
 app.options("*", cors()); // Preflight response for all routes
 
