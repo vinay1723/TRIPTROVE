@@ -13,7 +13,11 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   //2)create the checkout session
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    success_url: `https://vinaytriptrove.netlify.app/tour/${req.params.tourId}/user/${req.user.id}/price/${tour.price}`,
+    success_url: `${req.protocol}://${req.get(
+      "host"
+    )}/api/v1/bookings/checkout?tour=${req.params.tourId}&user=${
+      req.user.id
+    }&price=${tour.price}`,
     cancel_url: `${req.protocol}://${req.get("host")}/tours/${tour.slug}`,
     customer_email: req.user.email,
     client_reference_id: req.params.tourId,
@@ -41,15 +45,15 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 });
 
 exports.createBookingCheckout = async (req, res, next) => {
-  //This
   const { tour, user, price } = req.query;
 
-  if (!tour && !user && !price) {
-    return next();
-  }
+  if (!tour || !user || !price) return next();
+
   await Booking.create({ tour, user, price });
-  // console.log(`${req.originalUrl.split("?")[0]}${user}`);
-  res.redirect(`${req.originalUrl.split("?")[0]}${user}`);
+
+  res.redirect(
+    `https://vinaytriptrove.netlify.app/tour/${tour}/user/${user}/price/${price}`
+  );
 };
 
 exports.allBookings = async (req, res, next) => {

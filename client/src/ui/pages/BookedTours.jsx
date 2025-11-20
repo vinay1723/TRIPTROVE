@@ -1,19 +1,19 @@
-import { BookTours, getAllTours } from "../../../services/apitours";
-import { useLoaderData } from "react-router";
-import { useDispatch } from "react-redux";
-import { setBookings } from "../../assets/features/tours/tourSlice";
+// import { BookTours, getAllTours } from "../../../services/apitours";
+// import { useLoaderData } from "react-router";
+// import { useDispatch } from "react-redux";
+// import { setBookings } from "../../assets/features/tours/tourSlice";
 
 // import TourItem from "../../assets/features/tours/TourItem";
 import { Link } from "react-router-dom";
 
 function BookedTours() {
-  const { res, alltours } = useLoaderData();
-  const dispatch = useDispatch();
+  // const { res, alltours } = useLoaderData();
+  // const dispatch = useDispatch();
   // dispatch(setBookings(res.data.bookings));
-  const bookings = res.data.bookings;
-  const bookedtourids = bookings.map((tour) => tour.tour._id);
-  const tours = alltours.filter((tour) => bookedtourids.includes(tour._id));
-  dispatch(setBookings(tours));
+  // const bookings = res.data.bookings;
+  // const bookedtourids = bookings.map((tour) => tour.tour._id);
+  // const tours = alltours.filter((tour) => bookedtourids.includes(tour._id));
+  // dispatch(setBookings(tours));
 
   return (
     <div className="w-[650px] h-[209px] bg-slate-250 my-48 rounded-2xl shadow-2xl ">
@@ -44,20 +44,20 @@ function BookedTours() {
   );
 }
 
-export async function loader({ params, user }) {
-  const { tourId, userId, price } = params;
-  // const url = new URL(request.url);
-  // console.log(url);
-  // const tourId = url.searchParams.get("tourId");
-  // const userId = url.searchParams.get("userId");
-  // const Price = url.searchParams.get("price");
+// export async function loader({ params, request }) {
+//   const { tourId, userId, price } = params;
+//   // const url = new URL(request.url);
+//   // console.log(url);
+//   // const tourId = url.searchParams.get("tourId");
+//   // const userId = url.searchParams.get("userId");
+//   // const Price = url.searchParams.get("price");
 
-  console.log(tourId, userId, price);
-  console.log(user);
-  const res = await BookTours(tourId, userId, price);
-  const alltours = await getAllTours();
+//   console.log(tourId, userId, price);
+//   console.log(request);
+//   const res = await BookTours(tourId, userId, price);
+//   const alltours = await getAllTours();
 
-  return { res, alltours };
-}
+//   return { res, alltours };
+// }
 
 export default BookedTours;

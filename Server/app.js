@@ -85,25 +85,9 @@ app.use(
 app.use(cookieParser());
 app.use(express.json());
 
-// app.use((req, res, next) => {
-//   console.log("req:--", req);
-//   console.log("Cookies:===jwt", req.cookies.jwt);
-//   console.log("Headers Cookie:", req.headers.cookie);
-//   next();
-// });
-
 app.use(cookieParser());
 app.use(express.json());
 
-// app.options("*", cors()); // Preflight response for all routes
-
-// app.use("/", (req, res, next) => {
-//   res.status(200).json({
-//     status: "success",
-//     message: "request successfully received",
-//   });
-//   next();
-// });
 app.use((req, res, next) => {
   console.log(req.originalUrl);
   next();

@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: `/tour/:tourId/user/:userId/price/:price`,
         element: <BookedTours />,
-        loader: BookedToursLoad,
+        // loader: BookedToursLoad,
         errorElement: <Error />,
       },
       {
