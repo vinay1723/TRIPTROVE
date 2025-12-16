@@ -1,18 +1,24 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
 import AppLayout from "./ui/AppLayout";
-// import Home from "./ui/pages/Home";
-import Booked from "./ui/pages/Booked";
-import SingleTour from "./assets/features/tours/SingleTour";
-import Login from "./ui/pages/Login";
-import Signup from "./ui/pages/Signup";
-import Error from "./ui/Error";
-import User from "./assets/features/user/User";
-import Home, { loader as topLoaders } from "./ui/pages/Home";
-import RecommendedTours, {
-  loader as recommendLoader,
-} from "./ui/pages/RecommendedTours";
-import Tours, { loader as tourLoader } from "./assets/features/tours/Tours";
-import BookedTours, { loader as BookedToursLoad } from "./ui/pages/BookedTours";
+
+// Lazy loaded pages
+const Home = lazy(() => import("./ui/pages/Home"));
+const Booked = lazy(() => import("./ui/pages/Booked"));
+const SingleTour = lazy(() => import("./assets/features/tours/SingleTour"));
+const Login = lazy(() => import("./ui/pages/Login"));
+const Signup = lazy(() => import("./ui/pages/Signup"));
+const User = lazy(() => import("./assets/features/user/User"));
+const RecommendedTours = lazy(() => import("./ui/pages/RecommendedTours"));
+const Tours = lazy(() => import("./assets/features/tours/Tours"));
+const BookedTours = lazy(() => import("./ui/pages/BookedTours"));
+const ErrorPage = lazy(() => import("./ui/Error"));
+
+// Loaders (do not lazy load)
+import { loader as topLoaders } from "./ui/pages/Home";
+import { loader as recommendLoader } from "./ui/pages/RecommendedTours";
+import { loader as tourLoader } from "./assets/features/tours/Tours";
 
 const router = createBrowserRouter([
   {
@@ -20,52 +26,123 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Home />
+          </Suspense>
+        ),
         loader: topLoaders,
-        errorElement: <Error />,
+        errorElement: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ErrorPage />
+          </Suspense>
+        ),
       },
       {
         path: "/tours",
-        element: <Tours />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Tours />
+          </Suspense>
+        ),
         loader: tourLoader,
-        errorElement: <Error />,
+        errorElement: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ErrorPage />
+          </Suspense>
+        ),
       },
       {
         path: "/recommend",
-        element: <RecommendedTours />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <RecommendedTours />
+          </Suspense>
+        ),
         loader: recommendLoader,
-        errorElement: <Error />,
+        errorElement: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ErrorPage />
+          </Suspense>
+        ),
       },
       {
         path: "/tours/:id",
-        element: <SingleTour />,
-        errorElement: <Error />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <SingleTour />
+          </Suspense>
+        ),
+        errorElement: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ErrorPage />
+          </Suspense>
+        ),
       },
       {
-        path: `/tour/successfull`,
-        element: <BookedTours />,
-        // loader: BookedToursLoad,
-        errorElement: <Error />,
+        path: "/tour/successfull",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <BookedTours />
+          </Suspense>
+        ),
+        errorElement: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ErrorPage />
+          </Suspense>
+        ),
       },
       {
         path: "/booked",
-        element: <Booked />,
-        errorElement: <Error />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Booked />
+          </Suspense>
+        ),
+        errorElement: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ErrorPage />
+          </Suspense>
+        ),
       },
       {
         path: "/login",
-        element: <Login />,
-        errorElement: <Error />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Login />
+          </Suspense>
+        ),
+        errorElement: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ErrorPage />
+          </Suspense>
+        ),
       },
       {
-        path: "/Signup",
-        element: <Signup />,
-        errorElement: <Error />,
+        path: "/signup",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Signup />
+          </Suspense>
+        ),
+        errorElement: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ErrorPage />
+          </Suspense>
+        ),
       },
       {
         path: "/me",
-        element: <User />,
-        errorElement: <Error />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <User />
+          </Suspense>
+        ),
+        errorElement: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <ErrorPage />
+          </Suspense>
+        ),
       },
     ],
   },

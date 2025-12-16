@@ -13,7 +13,6 @@ function Header() {
   const navigate = useNavigate();
   async function handleLogout() {
     const res = await logout();
-    console.log(res);
     if (res.status === "success") dispatch(setUser(null));
     navigate("/");
   }

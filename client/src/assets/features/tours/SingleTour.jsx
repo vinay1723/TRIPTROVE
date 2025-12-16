@@ -230,14 +230,11 @@ function SingleTour() {
       </div>
       <Map tour={tour} />
       <div className="w-svw h-[408px] flex flex-col bg-zinc-700 justify-center py -2 relative mt-6">
-        <div className="h-[300px] bg-zinc-700 w-11/12 rounded-lg columns-4 overflow-x-scroll">
+        <div className="grid grid-flow-col auto-cols-[25%] gap-3 overflow-x-scroll w-11/12 py-5">
+          {/* <div className="h-[300px] bg-zinc-700 w-11/12 rounded-lg columns-4 overflow-x-scroll"> */}
           {tour.reviews.map((review) => {
             return <Reviews key={review._id} review={review} />;
           })}
-          {/* <Reviews />
-          <Reviews />
-          <Reviews />
-          <Reviews /> */}
         </div>
       </div>
       <div className="w-svw h-[258px] flex flex-col bg-zinc-700 justify-center py-2 relative mt-2 mb-16">
