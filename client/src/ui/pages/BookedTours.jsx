@@ -1,19 +1,22 @@
-// import { BookTours, getAllTours } from "../../../services/apitours";
-// import { useLoaderData } from "react-router";
-// import { useDispatch } from "react-redux";
-// import { setBookings } from "../../assets/features/tours/tourSlice";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setBookings } from "../../assets/features/tours/tourSlice";
+import { fetchBookTours } from "../../../services/apitours";
+import { getUser } from "../../assets/features/user/userSlice";
 
-// import TourItem from "../../assets/features/tours/TourItem";
 import { Link } from "react-router-dom";
 
 function BookedTours() {
-  // const { res, alltours } = useLoaderData();
-  // const dispatch = useDispatch();
-  // dispatch(setBookings(res.data.bookings));
-  // const bookings = res.data.bookings;
-  // const bookedtourids = bookings.map((tour) => tour.tour._id);
-  // const tours = alltours.filter((tour) => bookedtourids.includes(tour._id));
-  // dispatch(setBookings(tours));
+  const dispatch = useDispatch();
+  const user = useSelector(getUser);
+  useEffect(function () {
+    async function fetchBooked() {
+      const res = await fetchBookTours(user._id);
+      dispatch(setBookings(res.data.bookings));
+    }
+
+    fetchBooked();
+  }, []);
 
   return (
     <div className="w-[650px] h-[209px] bg-slate-250 my-48 rounded-2xl shadow-2xl ">
@@ -43,21 +46,5 @@ function BookedTours() {
     </div>
   );
 }
-
-// export async function loader({ params, request }) {
-//   const { tourId, userId, price } = params;
-//   // const url = new URL(request.url);
-//   // console.log(url);
-//   // const tourId = url.searchParams.get("tourId");
-//   // const userId = url.searchParams.get("userId");
-//   // const Price = url.searchParams.get("price");
-
-//   console.log(tourId, userId, price);
-//   console.log(request);
-//   const res = await BookTours(tourId, userId, price);
-//   const alltours = await getAllTours();
-
-//   return { res, alltours };
-// }
 
 export default BookedTours;

@@ -15,7 +15,6 @@ export async function getAllTours() {
   }
 }
 
-
 export async function signup(user) {
   try {
     const res = await axios({
@@ -123,7 +122,7 @@ export async function fetchBookTours(userId) {
     const res = await axios({
       method: "GET",
       // url: `http://localhost:3000/${userId}`,
-      url: `https://triptrove-ergy.onrender.com/${userId}`,
+      url: `https://triptrove-ergy.onrender.com/api/v1/bookings/${userId}`,
       withCredentials: true,
     });
 
