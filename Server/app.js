@@ -21,7 +21,7 @@ const cookieParser = require("cookie-parser");
 
 app.use(
   cors({
-    origin: "https://vinaytriptrove.netlify.app/",
+    origin: "https://vinaytriptrove.netlify.app",
     // Update to match your React app's URL
     // origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Allowed methods
@@ -68,6 +68,7 @@ app.use(
           "'self'",
           "https://vinaytriptrove.netlify.app",
           "https://triptrove-ergy.onrender.com",
+          "https://triptrove-kappa.vercel.app",
           "data:",
           "blob:",
           "https://*.stripe.com",
