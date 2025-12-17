@@ -37,7 +37,7 @@ function Login() {
       >
         <form
           onSubmit={handleUserdata}
-          className="mt-28 h-[418px] pl-12 pt-10 gap-4 flex flex-col  w-[578px] border-b-zinc-600 bg-white shadow-2xl rounded-2xl"
+          className="mt-28 h-[418px] pl-12 pt-10 gap-4 flex flex-col  w-[578px] border-b-zinc-600 bg-white shadow-lg rounded-2xl"
         >
           <h1 className="uppercase font-semibold   bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text text-3xl mb-5">
             log into your account

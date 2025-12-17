@@ -38,7 +38,7 @@ function Signup() {
       <div className={`w-svw flex justify-center items-center p-3`}>
         <form
           onSubmit={handleUserdata}
-          className="mt-2 h-[618px] pt-10 gap-4 flex flex-col justify-center items-center  w-[478px] border-b-zinc-600 bg-white shadow-2xl rounded-2xl"
+          className="mt-2 h-[618px] pt-10 gap-4 flex flex-col justify-center items-center  w-[478px] border-b-zinc-600 bg-white shadow-lg rounded-2xl"
         >
           <h1 className="uppercase font-semibold upeercase  bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text text-3xl mb-5">
             sign into your account

@@ -1,7 +1,7 @@
 import { updateSettings } from "../../../../services/apitours";
 import { fetchImage } from "../../../../services/apitours";
 import { fetchBookTours } from "../../../../services/apitours";
-import { getAllTours } from "../../../../services/apitours";
+// import { getAllTours } from "../../../../services/apitours";
 import { setBookings } from "../tours/tourSlice";
 import { useState } from "react";
 import { setPhoto } from "./userSlice";
@@ -53,11 +53,8 @@ function User() {
   async function handleMyBookings(e) {
     e.preventDefault();
     const res = await fetchBookTours(user._id);
-    const alltours = await getAllTours();
     const bookings = res.data.bookings;
-    const bookedtourids = bookings.map((tour) => tour.tour._id);
-    const tours = alltours.filter((tour) => bookedtourids.includes(tour._id));
-    dispatch(setBookings(tours));
+    dispatch(setBookings(bookings));
     navigate("/booked");
   }
 

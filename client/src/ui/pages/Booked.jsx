@@ -8,7 +8,7 @@ function Booked() {
 
   const bookedTours = tours.map((tour) => tour.tour) || [];
   return (
-    <div className="w-svw flex px-3 py-3 my-9 h-auto">
+    <div className="flex flex-wrap h-full w-full p-5 justify-center">
       {bookedTours.length > 0 &&
         bookedTours.map((tour) => (
           <TourItem key={tour._id} singletour={tour} />

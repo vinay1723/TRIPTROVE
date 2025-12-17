@@ -5,7 +5,8 @@ export async function getAllTours() {
     const res = await axios({
       method: "GET",
       // url: `http://localhost:3000/api/v1/tours/alltours`,
-      url: `https://triptrove-ergy.onrender.com/api/v1/tours/alltours`,
+      // url: `https://triptrove-ergy.onrender.com/api/v1/tours/alltours`,
+      url: `https://triptrove-kappa.vercel.app/api/v1/tours/alltours`,
       withCredentials: true,
     });
 
@@ -20,7 +21,8 @@ export async function signup(user) {
     const res = await axios({
       method: "POST",
       // url: `http://localhost:3000/api/v1/user/signup`,
-      url: `https://triptrove-ergy.onrender.com/api/v1/user/signup`,
+      // url: `https://triptrove-ergy.onrender.com/api/v1/user/signup`,
+      url: `https://triptrove-kappa.vercel.app/api/v1/user/signup`,
       data: user,
       withCredentials: true,
     });
@@ -35,7 +37,8 @@ export async function login(user) {
     const res = await axios({
       method: "POST",
       // url: `http://localhost:3000/api/v1/user/login`,
-      url: `https://triptrove-ergy.onrender.com/api/v1/user/login`,
+      // url: `https://triptrove-ergy.onrender.com/api/v1/user/login`,
+      url: `https://triptrove-kappa.vercel.app/api/v1/user/login`,
       data: user,
       withCredentials: true,
     });
@@ -50,7 +53,8 @@ export async function logout() {
     const res = await axios({
       method: "GET",
       // url: "http://localhost:3000/api/v1/user/logout",
-      url: `https://triptrove-ergy.onrender.com/api/v1/user/logout`,
+      // url: `https://triptrove-ergy.onrender.com/api/v1/user/logout`,
+      url: `https://triptrove-kappa.vercel.app/api/v1/user/logout`,
       withCredentials: true,
     });
     return res.data;
@@ -68,10 +72,14 @@ export async function updateSettings(user, data) {
       //   data === "password"
       //     ? `http://localhost:3000/api/v1/user/updateMyPassword`
       //     : `http://localhost:3000/api/v1/user/updateMe`,
+      // url:
+      //   data === "password"
+      //     ? `https://triptrove-ergy.onrender.com/api/v1/user/updateMyPassword`
+      //     : `https://triptrove-ergy.onrender.com/api/v1/user/updateMe`,
       url:
         data === "password"
-          ? `https://triptrove-ergy.onrender.com/api/v1/user/updateMyPassword`
-          : `https://triptrove-ergy.onrender.com/api/v1/user/updateMe`,
+          ? `https://triptrove-kappa.vercel.app/api/v1/user/updateMyPassword`
+          : `https://triptrove-kappa.vercel.app/api/v1/user/updateMe`,
       data: user,
       withCredentials: true,
     });
@@ -87,7 +95,8 @@ export async function fetchImage(photo) {
     //   responseType: "blob",
     // });
     const res = await axios.get(
-      `https://triptrove-ergy.onrender.com/api/image/${photo}`,
+      // `https://triptrove-ergy.onrender.com/api/image/${photo}`,
+      `https://triptrove-kappa.vercel.app/api/image/${photo}`,
       {
         responseType: "blob",
       }
@@ -106,7 +115,8 @@ export async function BookTours(tourId, userId, Price) {
     const res = await axios({
       method: "GET",
       // url: `http://localhost:3000/?tour=${tourId}&user=${userId}&price=${Price}`,
-      url: `https://triptrove-ergy.onrender.com/?tour=${tourId}&user=${userId}&price=${Price}`,
+      // url: `https://triptrove-ergy.onrender.com/?tour=${tourId}&user=${userId}&price=${Price}`,
+      url: `https://triptrove-kappa.vercel.app/?tour=${tourId}&user=${userId}&price=${Price}`,
       withCredentials: true,
     });
 
@@ -122,7 +132,8 @@ export async function fetchBookTours(userId) {
     const res = await axios({
       method: "GET",
       // url: `http://localhost:3000/${userId}`,
-      url: `https://triptrove-ergy.onrender.com/api/v1/bookings/${userId}`,
+      // url: `https://triptrove-ergy.onrender.com/api/v1/bookings/${userId}`,
+      url: `https://triptrove-kappa.vercel.app/api/v1/bookings/${userId}`,
       withCredentials: true,
     });
 
@@ -142,7 +153,8 @@ export async function getRecommendedTours() {
     const tours = await axios({
       method: "GET",
       // url: "http://localhost:3000/api/v1/recommend/tours",
-      url: "https://triptrove-ergy.onrender.com/api/v1/recommend/tours",
+      // url: "https://triptrove-ergy.onrender.com/api/v1/recommend/tours",
+      url: "https://triptrove-kappa.vercel.app/api/v1/recommend/tours",
       withCredentials: true,
     });
 
@@ -157,7 +169,8 @@ export async function Top5tours() {
     const tours = await axios({
       method: "GET",
       // url: "http://localhost:3000/api/v1/tours/top-5-cheap",
-      url: "https://triptrove-ergy.onrender.com/api/v1/tours/top-5-cheap",
+      // url: "https://triptrove-ergy.onrender.com/api/v1/tours/top-5-cheap",
+      url: "https://triptrove-kappa.vercel.app/api/v1/tours/top-5-cheap",
       withCredentials: true,
     });
     console.log(tours);

@@ -8,7 +8,8 @@ export const bookTour = async (tourId, stripe) => {
     const session = await axios({
       method: "GET",
       // url: `http://localhost:3000/api/v1/bookings/checkout-session/${tourId}`,
-      url: `https://triptrove-ergy.onrender.com/api/v1/bookings/checkout-session/${tourId}`,
+      // url: `https://triptrove-ergy.onrender.com/api/v1/bookings/checkout-session/${tourId}`,
+      url: `https://triptrove-kappa.vercel.app/api/v1/bookings/checkout-session/${tourId}`,
       withCredentials: true,
     });
     console.log(session);
