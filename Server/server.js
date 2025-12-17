@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const app = require("./app");
 const dotenv = require("dotenv");
+console.log("hello");
 process.on("uncaughtException", (err) => {
   console.log("Uncaught exception found");
   console.log(err.name, err.message);
