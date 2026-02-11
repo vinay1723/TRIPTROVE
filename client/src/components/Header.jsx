@@ -32,7 +32,7 @@ function Header() {
                 className="h-9 w-9"
               />
               <Link to="/" className="text-xl font-bold text-white">
-                TripTrove
+                TRIPTROVE
               </Link>
             </div>
 
