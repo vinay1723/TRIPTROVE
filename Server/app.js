@@ -21,8 +21,8 @@ const cookieParser = require("cookie-parser");
 
 app.use(
   cors({
-    origin: "https://vinaytriptrove.netlify.app",
-    // origin: "http://localhost:5173",
+    // origin: "https://vinaytriptrove.netlify.app",
+    origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Allowed methods
     // allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow credentials (cookies, authorization headers)
@@ -67,7 +67,7 @@ app.use(
           "'self'",
           "https://vinaytriptrove.netlify.app",
           "https://triptrove-ergy.onrender.com",
-          "https://triptrove-kappa.vercel.app",
+          "https://triptrove-brown.vercel.app",
           "data:",
           "blob:",
           "https://*.stripe.com",

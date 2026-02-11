@@ -4,9 +4,9 @@ export async function getAllTours() {
   try {
     const res = await axios({
       method: "GET",
-      // url: `http://localhost:3000/api/v1/tours/alltours`,
+      url: `http://localhost:3000/api/v1/tours/alltours`,
       // url: `https://triptrove-ergy.onrender.com/api/v1/tours/alltours`,
-      url: `https://triptrove-kappa.vercel.app/api/v1/tours/alltours`,
+      // url: `https://triptrove-brown.vercel.app/api/v1/tours/alltours`,
       withCredentials: true,
     });
 
@@ -20,9 +20,9 @@ export async function signup(user) {
   try {
     const res = await axios({
       method: "POST",
-      // url: `http://localhost:3000/api/v1/user/signup`,
+      url: `http://localhost:3000/api/v1/user/signup`,
       // url: `https://triptrove-ergy.onrender.com/api/v1/user/signup`,
-      url: `https://triptrove-kappa.vercel.app/api/v1/user/signup`,
+      // url: `https://triptrove-brown.vercel.app/api/v1/user/signup`,
       data: user,
       withCredentials: true,
     });
@@ -36,9 +36,9 @@ export async function login(user) {
   try {
     const res = await axios({
       method: "POST",
-      // url: `http://localhost:3000/api/v1/user/login`,
+      url: `http://localhost:3000/api/v1/user/login`,
       // url: `https://triptrove-ergy.onrender.com/api/v1/user/login`,
-      url: `https://triptrove-kappa.vercel.app/api/v1/user/login`,
+      // url: `https://triptrove-brown.vercel.app/api/v1/user/login`,
       data: user,
       withCredentials: true,
     });
@@ -52,9 +52,9 @@ export async function logout() {
   try {
     const res = await axios({
       method: "GET",
-      // url: "http://localhost:3000/api/v1/user/logout",
+      url: "http://localhost:3000/api/v1/user/logout",
       // url: `https://triptrove-ergy.onrender.com/api/v1/user/logout`,
-      url: `https://triptrove-kappa.vercel.app/api/v1/user/logout`,
+      // url: `https://triptrove-brown.vercel.app/api/v1/user/logout`,
       withCredentials: true,
     });
     return res.data;
@@ -68,18 +68,18 @@ export async function updateSettings(user, data) {
   try {
     const res = await axios({
       method: "PATCH",
-      // url:
-      //   data === "password"
-      //     ? `http://localhost:3000/api/v1/user/updateMyPassword`
-      //     : `http://localhost:3000/api/v1/user/updateMe`,
+      url:
+        data === "password"
+          ? `http://localhost:3000/api/v1/user/updateMyPassword`
+          : `http://localhost:3000/api/v1/user/updateMe`,
       // url:
       //   data === "password"
       //     ? `https://triptrove-ergy.onrender.com/api/v1/user/updateMyPassword`
       //     : `https://triptrove-ergy.onrender.com/api/v1/user/updateMe`,
-      url:
-        data === "password"
-          ? `https://triptrove-kappa.vercel.app/api/v1/user/updateMyPassword`
-          : `https://triptrove-kappa.vercel.app/api/v1/user/updateMe`,
+      // url:
+      //   data === "password"
+      //     ? `https://triptrove-brown.vercel.app/api/v1/user/updateMyPassword`
+      //     : `https://triptrove-brown.vercel.app/api/v1/user/updateMe`,
       data: user,
       withCredentials: true,
     });
@@ -91,16 +91,16 @@ export async function updateSettings(user, data) {
 
 export async function fetchImage(photo) {
   try {
-    // const res = await axios.get(`http://localhost:3000/api/image/${photo}`, {
-    //   responseType: "blob",
-    // });
-    const res = await axios.get(
-      // `https://triptrove-ergy.onrender.com/api/image/${photo}`,
-      `https://triptrove-kappa.vercel.app/api/image/${photo}`,
-      {
-        responseType: "blob",
-      }
-    );
+    const res = await axios.get(`http://localhost:3000/api/image/${photo}`, {
+      responseType: "blob",
+    });
+    // const res = await axios.get(
+    //   // `https://triptrove-ergy.onrender.com/api/image/${photo}`,
+    //   `https://triptrove-brown.vercel.app/api/image/${photo}`,
+    //   {
+    //     responseType: "blob",
+    //   }
+    // );
     const imageBlob = res.data;
     const imageObjectURL = URL.createObjectURL(imageBlob);
     return imageObjectURL;
@@ -114,9 +114,9 @@ export async function BookTours(tourId, userId, Price) {
   try {
     const res = await axios({
       method: "GET",
-      // url: `http://localhost:3000/?tour=${tourId}&user=${userId}&price=${Price}`,
+      url: `http://localhost:3000/?tour=${tourId}&user=${userId}&price=${Price}`,
       // url: `https://triptrove-ergy.onrender.com/?tour=${tourId}&user=${userId}&price=${Price}`,
-      url: `https://triptrove-kappa.vercel.app/?tour=${tourId}&user=${userId}&price=${Price}`,
+      // url: `https://triptrove-brown.vercel.app/?tour=${tourId}&user=${userId}&price=${Price}`,
       withCredentials: true,
     });
 
@@ -131,9 +131,9 @@ export async function fetchBookTours(userId) {
   try {
     const res = await axios({
       method: "GET",
-      // url: `http://localhost:3000/${userId}`,
+      url: `http://localhost:3000/${userId}`,
       // url: `https://triptrove-ergy.onrender.com/api/v1/bookings/${userId}`,
-      url: `https://triptrove-kappa.vercel.app/api/v1/bookings/${userId}`,
+      // url: `https://triptrove-brown.vercel.app/api/v1/bookings/${userId}`,
       withCredentials: true,
     });
 
@@ -152,9 +152,9 @@ export async function getRecommendedTours() {
   try {
     const tours = await axios({
       method: "GET",
-      // url: "http://localhost:3000/api/v1/recommend/tours",
+      url: "http://localhost:3000/api/v1/recommend/tours",
       // url: "https://triptrove-ergy.onrender.com/api/v1/recommend/tours",
-      url: "https://triptrove-kappa.vercel.app/api/v1/recommend/tours",
+      // url: "https://triptrove-brown.vercel.app/api/v1/recommend/tours",
       withCredentials: true,
     });
 
@@ -168,9 +168,9 @@ export async function Top5tours() {
   try {
     const tours = await axios({
       method: "GET",
-      // url: "http://localhost:3000/api/v1/tours/top-5-cheap",
+      url: "http://localhost:3000/api/v1/tours/top-5-cheap",
       // url: "https://triptrove-ergy.onrender.com/api/v1/tours/top-5-cheap",
-      url: "https://triptrove-kappa.vercel.app/api/v1/tours/top-5-cheap",
+      // url: "https://triptrove-brown.vercel.app/api/v1/tours/top-5-cheap",
       withCredentials: true,
     });
     console.log(tours);
